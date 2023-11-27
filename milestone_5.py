@@ -1,5 +1,7 @@
+## Importing relevant packages
 import random
 
+## All initializations
 word = ''
 my_favourite_fruits = ['Mango', 'Jackfruit', 'Strawberry', 'Grapes', 'Pineapple']
 word_list = my_favourite_fruits
@@ -15,14 +17,18 @@ print("num_letters", num_letters)
 num_lives=0
 list_of_guesses=[]
 
+## Class definition
 class Hangman:
+    ## Class initializations 
     def __init__(self, word_list, num_lives):
         self.word_list=word_list
         self.num_lives=num_lives
 
+    ## function definition
     def check_guess(self, guess):
         guess = guess.lower()
         found=False
+        ## Specific validations of the input with the word
         for index, char in enumerate(word):
             if guess == char and char not in enumerate(word_guessed):
                 word_guessed[index]=guess
@@ -38,9 +44,11 @@ class Hangman:
             print('Good guess!')
             print("Number of guesses remaining :",num_letters)
 
+    ## function definition
     def ask_for_input(self):
         guess = '  '
         print(len(guess))
+        ## Initial validations of the input
         while(len(guess) != 1 or not guess.isalpha()):
             guess = input("Enter your value as one alpabetical char: ")
             print(guess)
@@ -59,6 +67,7 @@ class Hangman:
 
 
 
+## Main function definition
 def play_game(word_list):
     num_lives = 5
     game=Hangman(word_list, num_lives) 
@@ -73,7 +82,7 @@ def play_game(word_list):
             print("The word was :", word)
             break
 
-
+## Main function call
 play_game(word_list)
 
 

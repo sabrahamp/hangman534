@@ -6,8 +6,10 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 Installation instructions
 
 Usage instructions
+python milestone_2.py
+python milestone_4.py
+python milestone_5.py
 
 File structure of the project
 
 License information
-to be added later
